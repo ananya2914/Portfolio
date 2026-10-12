@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ananya Mishra</title>
+  <meta name="description" content="Ananya Mishra, M.S. Computer Science student at Arizona State University (May 2027). Software engineer working on backend systems, data, and GPU computing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">AM</a>
+    <nav>
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Software Engineer · M.S. CS @ Arizona State University</p>
+      <h1>Ananya Mishra</h1>
+      <p class="lede">
+        I build backend systems, data pipelines, and the occasional CUDA kernel.
+        I'm a Computer Science graduate student finishing in May&nbsp;2027 and looking for
+        new-grad software engineering roles.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn" href="https://github.com/ananya2914" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/ananya-mishra-266742220" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="meta">Tempe, Arizona · Python · Java · C/C++ · CUDA · SQL</p>
+    </section>
+
+    <section id="work" class="section">
+      <h2 class="section-title"><span>01</span> Selected projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="systems">Systems</button>
+        <button class="chip" data-filter="ml">ML</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="mobile">Mobile</button>
+      </div>
+
+      <div class="projects">
+        <article class="project featured" data-tags="systems ml">
+          <div class="project-head">
+            <h3>Custom CUDA Kernels for PyTorch</h3>
+            <span class="tag">CSE 520 · group project</span>
+          </div>
+          <p>
+            Wrote CUDA kernels for Linear Forward (matrix multiply + bias) and ReLU Backward, wired them into
+            PyTorch through C++ <code>torch::Tensor</code> wrappers and Python bindings, and validated them by
+            training an MNIST network end to end. The final part optimized and benchmarked both kernels on NVIDIA A100 GPUs against
+            cuBLAS and PyTorch baselines.
+          </p>
+          <ul class="points">
+            <li>Mapped CUDA threads to tensor elements, set grid/block launch configuration, and worked directly with GPU memory layout</li>
+            <li>Bridged Python → PyTorch/C++ → CUDA for the forward and backward passes</li>
+            <li>Ran on ASU's Sol HPC cluster</li>
+          </ul>
+          <p class="stack">CUDA · C++ · PyTorch · Python · NVIDIA A100 · Linux HPC</p>
+        </article>
+
+        <article class="project" data-tags="mobile">
+          <div class="project-head">
+            <h3>Misère Tic-Tac-Toe</h3>
+            <span class="tag">Android</span>
+          </div>
+          <p>
+            An Android game where completing a line makes you <em>lose</em>. Built with an AI opponent that uses Minimax
+            with Alpha-Beta pruning, plus offline and Bluetooth multiplayer.
+          </p>
+          <ul class="points">
+            <li>Deterministic game state keeps local and multiplayer play consistent</li>
+            <li>Game logic and networking live outside the UI layer; Room DB handles persistence</li>
+          </ul>
+          <p class="stack">Kotlin · Android SDK · Room DB · Bluetooth</p>
+          <a class="link" href="https://github.com/ananya2914/Misere-Tic-Tac-Toe" target="_blank" rel="noopener">Source ↗</a>
+        </article>
+
+        <article class="project" data-tags="web">
+          <div class="project-head">
+            <h3>Factory Farming, Visualized</h3>
+            <span class="tag">CSE 578 · team project</span>
+          </div>
+          <p>
+            A scrollytelling website about the scale of factory farming, built with custom D3.js visualizations: a live
+            killing clock, animal pictograms, radial charts, and a Sankey-style flow.
+          </p>
+          <ul class="points">
+            <li>I worked on data preparation and validation, visual encodings, the D3 visualizations, and the narrative structure</li>
+            <li>Chose a narrative sequence over a dashboard so readers see the numbers in a deliberate order</li>
+          </ul>
+          <p class="stack">JavaScript · D3.js · HTML · CSS</p>
+          <a class="link" href="https://ananya2914.github.io/data_viz_factory_farming/" target="_blank" rel="noopener">Live site ↗</a>
+        </article>
+
+        <article class="project" data-tags="web">
+          <div class="project-head">
+            <h3>LeetTrack</h3>
+            <span class="tag">Chrome extension</span>
+          </div>
+          <p>
+            A Chrome extension that tracks LeetCode progress, breaking solved problems down by difficulty and topic,
+            with a public site for onboarding new users.
+          </p>
+          <ul class="points">
+            <li>Lives inside the LeetCode workflow instead of a separate app</li>
+            <li>Written in vanilla JavaScript to stay lightweight</li>
+          </ul>
+          <p class="stack">JavaScript · HTML/CSS · Chrome Extension APIs</p>
+          <a class="link" href="https://ananya2914.github.io/leetcode1/" target="_blank" rel="noopener">Live site ↗</a>
+        </article>
+
+        <article class="project" data-tags="ml">
+          <div class="project-head">
+            <h3>Landslide Detection</h3>
+            <span class="tag">Deep learning</span>
+          </div>
+          <p>
+            Semantic segmentation of satellite imagery to locate landslide regions. I compared UNet, UNet + ResNet,
+            and BiSeNet architectures.
+          </p>
+          <ul class="points">
+            <li>Framed it as segmentation rather than classification, since the goal is to locate affected regions</li>
+            <li>Built the preprocessing that turns imagery and masks into consistent model inputs</li>
+          </ul>
+          <p class="stack">Python · TensorFlow · Keras · NumPy · Pandas</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title"><span>02</span> Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">Jun – Jul 2026</div>
+          <div>
+            <h3>IT Intern · <span class="org">Aurobindo Pharma USA</span></h3>
+            <p>Built Power Automate workflows that process FDA drug-approval communications by extracting application data, validating records, and routing them to stakeholders. The workflows include error handling and paths for manual review.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Jan – Jul 2025</div>
+          <div>
+            <h3>Web Development Intern · <span class="org">Coreties</span></h3>
+            <p>Developed backend services and ClickHouse schemas for analytics and high-volume data processing. Extracted, transformed, and validated API data, and worked with other teams on data reliability and query performance.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">May – Jun 2024</div>
+          <div>
+            <h3>Software Engineer Intern · <span class="org">Talview</span></h3>
+            <p>Developed and debugged backend-integrated features with REST APIs and PostgreSQL. Tracked down data inconsistencies and resolved them with the engineering team.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h2 class="section-title small">Education</h2>
+      <div class="edu">
+        <div>
+          <h3>M.S. Computer Science</h3>
+          <p>Arizona State University · 2025 – 2027 (expected)</p>
+          <p class="muted">New American University Scholarship</p>
+        </div>
+        <div>
+          <h3>B.Tech. Computer Science &amp; Data Science</h3>
+          <p>MPSTME, NMIMS · 2021 – 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title"><span>03</span> Toolbox</h2>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Python, Java, C/C++, CUDA, Kotlin, JavaScript, TypeScript, SQL</dd></div>
+        <div><dt>Frameworks</dt><dd>React, Next.js, Node.js, Express, Django, Android SDK, PyTorch, TensorFlow, Keras, D3.js</dd></div>
+        <div><dt>Data</dt><dd>PostgreSQL, MySQL, MongoDB, ClickHouse, Room DB</dd></div>
+        <div><dt>Platforms</dt><dd>Linux, Git, Docker, Kubernetes, AWS, CI/CD</dd></div>
+      </dl>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 class="section-title"><span>04</span> Get in touch</h2>
+      <p class="lede">I'm looking for new-grad software engineering roles starting in 2027. The best way to reach me is email.</p>
+      <a class="email" href="mailto:mishraananya2027@gmail.com">mishraananya2027@gmail.com</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Ananya Mishra</span>
+    <span>Built by hand: HTML, CSS, and a little JS</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
